@@ -1,0 +1,66 @@
+<%- include('partials/header'); -%>
+
+<br>        
+<br>
+<br>        
+<br>
+<br>        
+<br>
+<br>        
+<br>
+<div id="formReserva" class="container">
+    <div class="text-center pt-5">
+        <h2 id="Color-titulo">Historial de Documentos</h2>
+        <hr>
+
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-12 col-lg-11 col-12 text-center">
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Fecha de emisión</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Validez</th>
+                    <th scope="col">Código trámite</th>
+                    <th scope="col">Descargar</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <% for(let i = 0; i < newDoc.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= newDoc[i].fecha_emision %></th>
+                    <td>$<%= newDoc[i].precio %></td>
+                    <% if(newDoc[i].valido === true) { %>
+                    <td>Es válido</td>
+                    <% } else { %>
+                    <td>No es válido</td>
+                    <% } %>
+                    <td><%= newDoc[i].nombre_tramite %></td>
+                    <td>
+                        <a download='<%= newDoc[i].nombre_tramite %>' href='data:application/pdf;base64,<%=newDoc[i].doc64%>' class="btn btn-outline-primary">Descargar</a>
+                    </td>
+                </tr>
+                
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+<br>        
+<br>
+<br>    
+<br>
+<br>    
+<br>
+<br>        
+<br>
+<br>        
+<br>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,162 @@
+
+        <!--Menu Superior -->
+        <%- include('partials/header'); %>
+
+        <!--Body -->
+    <body>
+      <main>
+        <div class="container pt-5">
+          <h2 class="col-md-6 mt-5 offset-md-4" id="Color-titulo">Generador de Documentos</h2>
+          <hr>
+        </div>
+        <div class="row justify-content-md-center">
+        <div class="col-7 ">
+          <div class="row pt-5">
+              <div class="col-md-10 offset-md-1">
+                  <h3 id="Color-titulo" class="mb-5">Rellena los campos para generar documento</h3>
+                  <form id="form" class="mb-5">
+                      <div class="mb-3">
+                          <label for="curso" class="form-label">Seleccionar el tipo de documento</label>
+                          <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Selecciona tu tramite</option>
+                            <option>Carta de Poder</option>
+                            <option>Declaración Jurada Simple</option>
+                            <option>Contrato Arriendo Vehículo</option>
+                            <option>Carta de Renuncia</option>
+                            <option>Contrato Prestación de Servicios</option>
+                          </select>
+                      </div>
+                      <br>
+                      <div class="row mb-3">
+                        <label  id="Color-titulo" class="form-label">Datos persona solicitante</label>
+                        <div class="col-md-6">
+                          <label for="validationCustom01" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="Emilio" required>
+                          <div class="valid-feedback">
+                            ¡Se ve bien!
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="validationCustom02" class="form-label">Apellido</label>
+                          <input type="text" class="form-control" id="validationCustom02" placeholder="Perez" required>
+                          <div class="valid-feedback">
+                            ¡Se ve bien!
+                          </div>
+                        </div> 
+                      </div>
+                      <div class="row mb-3">
+                        <label  id="Color-titulo" class="form-label">Datos persona a la que va dirigido</label>
+                        <div class="col-md-6">
+                          <label for="validationCustom01" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="validationCustom01" placeholder="Emilio" required>
+                          <div class="valid-feedback">
+                            ¡Se ve bien!
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="validationCustom02" class="form-label">Apellido</label>
+                          <input type="text" class="form-control" id="validationCustom02" placeholder="Perez" required>
+                          <div class="valid-feedback">
+                            ¡Se ve bien!
+                          </div>
+                        </div> 
+                      </div>
+  
+                      <div class="mb-3">
+                          <label for="email" class="form-label">Correo electronico</label>
+                          <input type="email" class="form-control" id="email" placeholder="notaria@abuyeres.cl" required>
+                      </div>
+  
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <label for="direccion" class="form-label">Dirección</label>
+                              <input type="text" class="form-control" id="direccion" placeholder="calle condell 465" required>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="telefono" class="form-label">Teléfono</label>
+                              <input type="text" class="form-control" id="telefono" placeholder="938753668" required>
+                          </div>
+                      </div>
+  
+                      <div class="row mb-3">
+                          <div class="col-md-2">
+                              <div>
+                                  <label for="" class="form-label">Tiene hijos</label>
+                                  <div class="form-check form-check-inline">
+                                      <input type="radio" name="hijos" class="form-check-input" id="hijos-si" value="1">
+                                      <label for="hijos-si" class="form-check-label">Si</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                      <input type="radio" name="hijos" class="form-check-input" id="hijos-no" value="0"
+                                          checked>
+                                      <label for="hijos-no" class="form-check-label">No</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-10">
+                              <div>
+                                  <label for="numeroHijos" class="form-label">Cuantos hijos tiene?</label>
+                                  <select class="form-select" id="numeroHijos">
+                                      <option value="0">Seleccione una opcion</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="Mas de 4">Mas de 4</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <span class="d-block pb-2">Firma tu documento</span>
+                      <div class="signature mb-2" style="width: 100%; height: 200px;">
+                          <canvas id="signature-pad"
+                              style="border: 1px dashed red; width: 100%; height: 200px;"></canvas>
+                      </div>
+  
+                      <button type="submit" class="btn btn-success mb-4">Generar documento</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-5" style=" border-left: 1px solid rgb(182, 182, 182);">
+        <div class="row pt-5 justify-content-md-center">
+          <h3 id="Color-titulo" class="mb-5">Descarga de documentos emitidos</h3>
+            <div class="offset-5 col-md-12">
+                
+                <form id="form" class="mb-5">
+                
+                  <div class="col-md-6 mb-3">
+                    <label for="rut" class="form-label">Rut</label>
+                    <input type="text" class="form-control" id="rut" name="rut" placeholder="20233111-2" required>
+                  </div>
+                  
+                  
+                  <div class="col-md-6 mb-5">
+                        <label for="curso" class="form-label">Seleccionar el tipo de documento</label>
+                        <select class="form-select" required>
+                          <option selected disabled aria-valuemin="">Selecciona tu tramite</option>
+                          <option>Carta de Poder</option>
+                          <option>Declaración Jurada Simple</option>
+                          <option>Contrato Arriendo Vehículo</option>
+                          <option>Carta de Renuncia</option>
+                          <option>Contrato Prestación de Servicios</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success mb-4">Descargar documento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+      </main>
+    
+      <!--FOOTER -->
+      <%- include('partials/footer'); %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html>

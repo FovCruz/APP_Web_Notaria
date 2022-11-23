@@ -1,0 +1,27 @@
+{
+  "name": "app_web_notaria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jspdf": "^2.5.1",
+    "morgan": "^1.10.0",
+    "pdfkit": "^0.13.0",
+    "sequelize": "^6.25.5",
+    "signature_pad": "^4.1.4",
+    "tedious": "^15.1.1",
+    "transbank-sdk": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
